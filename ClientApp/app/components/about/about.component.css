@@ -1,0 +1,51 @@
+﻿
+[id = div_profile]
+{
+    margin: 0;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    left: 43%;
+    top: 360px;
+}
+[id = img_profilepic]
+{
+    width: 250px;
+    height: 290px;
+    border-radius: 50%;
+}
+[id = p_contactinfo]
+{
+    list-style-type: none;
+    position: absolute;
+    left: 295px;
+    top: 80px;
+    text-align: center;
+}
+[id = a_downloadresume]
+{
+    width: 128px;
+    position: absolute;
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 4px;
+    left: 310px;
+    top: 205px;
+}
+
+
+
+[id = div_abouttext] {
+    margin: 0;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 600px;
+    border: 1px solid black;
+    width: 550px;
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid grey;
+    border-radius: 8px;
+}

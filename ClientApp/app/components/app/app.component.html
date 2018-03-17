@@ -1,0 +1,19 @@
+
+<div id="div_background">
+
+    <h1 id="h1_nameheading">Thanit Tangson</h1>
+
+    <nav id="nav_routerlinks" [routerLinkActive]="['link-active']">
+        <a ng-class="routerlink" routerLink="/about">About</a> |
+        <a ng-class="routerlink" routerLink="/skills">Skills</a> |
+        <a ng-class="routerlink" routerLink="/education">Education</a> |
+        <a ng-class="routerlink" routerLink="/employment">Employment</a> |
+        <a ng-class="routerlink" routerLink="/other">Other</a>
+    </nav>
+
+    <div class="main" [@animRoutes]="getPage(appOutlet)">
+        <router-outlet #appOutlet="outlet"></router-outlet>
+    </div>
+
+</div>
+

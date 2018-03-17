@@ -1,0 +1,97 @@
+﻿
+[id = div_employmentbackground]
+{
+    border: 0px solid black;
+}
+
+
+
+[ng-class = header]
+{
+    width: 500px;
+    height: 300px;
+    margin: 0;
+    position: absolute;
+    left: 54%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+[id = div_davidjonesheader]
+{
+    top: 340px;
+}
+[id = div_trendwestheader]
+{
+    top: 630px;
+}
+[id = div_betterstillsheader]
+{
+    top: 890px;
+}
+[ng-class = header] ul
+{
+    list-style-type: square;
+}
+
+
+[ng-class = heading]
+{
+    position: relative;
+    left: 15px;
+    text-align: center;
+}
+
+
+
+[ng-class = logo]
+{
+    margin: 0;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    left: 0px;
+    top: 55px;
+}
+[id = img_davidjoneslogo]
+{
+    width: 140px;
+    height: 150px;
+}
+[id = img_shoeclipart]
+{
+    width: 175px;
+    height: 110px;
+}
+[id = img_cameraclipart]
+{
+    width: 160px;
+    height: 120px;
+}
+
+
+
+[ng-class = body]
+{
+    width: 520px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid grey;
+    padding-top: 8px;
+    border-radius: 8px;
+}
+[id = div_davidjonesbody]
+{
+    top: 390px;
+}
+[id = div_trendwestbody]
+{
+    top: 650px;
+}
+[id = div_betterstillsbody]
+{
+    top: 920px;
+}

@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Home Page";
+
+    // add the following to <app></app> to allow faster loading time via server-side prerendering, but kills animations
+    // asp -prerender-module="ClientApp/dist/main-server"
+}
+
+<app></app>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

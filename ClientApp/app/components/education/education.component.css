@@ -1,0 +1,57 @@
+﻿
+[id = div_educationbackground]
+{
+    position: absolute;
+    margin: 0;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 400px;
+    left: 50%;
+}
+
+[id = img_utslogo]
+{
+    width: 300px;
+    height: 120px;
+}
+
+[id = h3_utsheading] 
+{
+    font-size: 28px;
+}
+
+[id = p_engineering]
+{
+    font-size: 18px;
+    position: relative;
+}
+
+[id = li_engineering]
+{
+    position: relative;
+    left: -10px;
+}
+
+[id = p_business]
+{
+    font-size: 18px;
+}
+
+[id = li_business]
+{
+    position: relative;
+    left: -10px;
+}
+
+[id = div_degrees]
+{
+    position: relative;
+    top: 20px;
+}
+
+[id = div_notes]
+{
+    position: relative;
+    top: 40px;
+}
