@@ -4,11 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { transition, trigger, query, style, state, animate, group, animateChild, stagger } from '@angular/animations';
-
-@NgModule
-({
-    imports: [BrowserModule, BrowserAnimationsModule]
-})
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 @Component
 ({
@@ -65,8 +61,11 @@ import { transition, trigger, query, style, state, animate, group, animateChild,
 
 export class AppComponent
 {
+    constructor() { }
+
     getPage(outlet: any)
     {
         return outlet.activatedRouteData['page'];
     }
 }
+
