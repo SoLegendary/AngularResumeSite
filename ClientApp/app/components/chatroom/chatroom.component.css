@@ -63,7 +63,7 @@
 
 
 
-[id = textarea_messagearea] 
+[id = textarea_message] 
 {
     background-color: floralwhite;
     font-family: 'Trebuchet MS';
@@ -81,6 +81,26 @@
     border-radius: 10px;
     padding: 5px 10px;
 }
+
+[id = textarea_username] 
+{
+    background-color: floralwhite;
+    font-family: 'Trebuchet MS';
+    font-size: 16px;
+    resize: none;
+    margin: 0;
+    position: absolute;
+    width: 10%;
+    height: 38px;
+    top: 77%;
+    left: 37.5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
 
 [id = button_sendmessage]
 {
