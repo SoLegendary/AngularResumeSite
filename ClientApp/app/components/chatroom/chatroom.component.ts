@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Message } from '../../classes/message';
+import { Observable } from 'rxjs/Rx';
 import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 
 
@@ -12,19 +13,45 @@ import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
     styleUrls: ['./chatroom.component.css'],
 })
 
+// TODO:
+/*
+ * Account/login service - adapt from testapp project 2/3
+ * Dynamic update calls instead of polling every second
+ * Message loading/shifting animation
+ * Dynamically sized message boxes
+ * Allow use of enter to send messages (maybe change to form instead of textarea + button)
+ * Message send/receive sounds when window not in focus
+ * 
+ * BUGS:
+ * 
+ * ' character breaks SQL syntax
+ * Long messages are not wrapping around the box edges
+ * 
+ */
 
 
 export class ChatroomComponent
 {
     constructor(private http: Http) { }
 
+    url: string = 'http://solegendarytestapp.azurewebsites.net/dbQueryAngular.php';
+    subscribeText: string = ''; // data from post request shown on page
+
     ngOnInit()
     {
         this.updateMessages();
-    }
 
-    url: string = 'http://solegendarytestapp.azurewebsites.net/dbQueryAngular.php';
-    subscribeText: string = 'no current data'; // data from post request shown on page
+        // Repeat updateMessage() every second
+        // ALTERNATIVELY find a way to trigger a global update for all clients when anyone sends a message?
+        // Somehow send a message from backend to frontend whenever a submit message is done
+
+        Observable.interval(1000)
+            .subscribe
+            (x =>
+            {
+                this.updateMessages();
+            });
+    }
 
 
     // Make a HTTP Post request to the PHP backend
@@ -52,7 +79,7 @@ export class ChatroomComponent
             },
             (error) =>
             {
-                console.log('Error: ', error);
+                console.log('Error from backend: ', error);
                 this.subscribeText = error.text();
                 if (callback)
                 {
@@ -61,6 +88,12 @@ export class ChatroomComponent
             })
     }
 
+
+    showDebug: boolean = false;
+    toggleDebug()
+    {
+        this.showDebug = !this.showDebug;
+    }
 
     username: string = 'Anonymous'; // username of person chatting
     updateUsername(username: string)
@@ -71,24 +104,33 @@ export class ChatroomComponent
 
     // array of all messages ever sent in the chatroom
     messages: Message[];
+    lastid: number = 0;
 
     // update list of messages from the database and get highest message id
     updateMessages()
     {
-        let querystring = "SELECT * FROM messages";
+        let querystring = "SELECT TOP 5 * FROM messages ORDER BY id DESC";
+        //let querystring = 'SELECT * FROM messages WHERE id > (SELECT (MAX(id) - 5) FROM messages)';
+        
         this.httpPost(this.url, querystring, 'text',
-            () => // following code must be sent as callback so it executes after the httpPost returns subscribe data
+            () =>
             {
                 // substring to remove from the json string (ie. echoed PHP debug text)
                 // IF PHP IS CHANGED THIS ALSO MUST CHANGE
                 let debugstring: string = "Successfully performed query: '" + querystring + "'<br><br>"
 
-                // remove debug text from the backend echoes
-                let jsonstring = this.subscribeText.replace(debugstring, '');
+                // if (response was received && response is successful && data exists)
+                if (this.subscribeText && this.subscribeText.includes(debugstring) && !this.subscribeText.includes("No data retrieved"))
+                {
+                    // remove debugstring from the subscribeText echoed from backend
+                    let jsonstring = this.subscribeText.replace(debugstring, '');
+                    
+                    // turn string into a JSON object and assign it to visible messages
+                    console.log(jsonstring);
+                    this.messages = JSON.parse(jsonstring).reverse();
 
-                // turn string into a JSON object and assign it to visible messages
-                console.log(jsonstring);
-                this.messages = JSON.parse(jsonstring);
+                    this.lastid = this.messages[this.messages.length - 1].id;
+                }
             }
         );
     }
@@ -99,8 +141,12 @@ export class ChatroomComponent
     deleteMessages()
     {
         let querystring = "DELETE FROM messages";
-        this.httpPost(this.url, querystring, 'text');
-        this.messages = [];
+        this.httpPost(this.url, querystring, 'text',
+            () =>
+            {
+                this.messages = [];
+            }
+        );
     }
 
 
@@ -114,12 +160,11 @@ export class ChatroomComponent
 
         // retrieve highest id number from the db to update
         // if this doesnt work, make lastid a component class variable and only update at the end of this function
-        let lastid = 1;
 
         let message = <Message>
         ({
             username: (this.username || 'Anonymous'),
-            id: lastid + 1,
+            id: this.lastid + 1,
             message: messagebody,
             date: currentdate,
             time: currenttime
@@ -127,11 +172,11 @@ export class ChatroomComponent
 
         let querystring = "INSERT INTO messages VALUES('" +
                            message.username + "', '" +
-                           lastid           + "', '" +
+                           message.id       + "', '" +
                            message.message  + "', '" +
                            message.date     + "', '" +
                            message.time     + "')"
 
-        this.httpPost(this.url, querystring, 'text', ()=>{this.updateMessages();});
+        this.httpPost(this.url, querystring, 'text', ()=>{ this.updateMessages() });
     }
 }

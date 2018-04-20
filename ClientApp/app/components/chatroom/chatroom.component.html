@@ -3,9 +3,8 @@
 
     <div *ngIf="messages">
         <div class="div_messagebubble" *ngFor="let message of messages; index as i"
-            [ngStyle]=
-            "{
-                'top.%': 24 + i*12,
+             [ngStyle]="{
+                'top.%': 8 + i*12,
                 'left.%': (message.username == username ? 55 : 45),
                 'background-color': (message.username == username ? 'azure' : '#bcd1f4')
             }">
@@ -13,20 +12,32 @@
             <p class="p_messagebody">{{message.message}}</p>
             <p class="p_messagedate">{{message.date}}</p>
             <p class="p_messagetime">{{message.time}}</p>
+            <p class="p_messageid">#{{message.id}}</p>
         </div>
     </div>
 
 
-    <p id='p_poweredby'>Powered by ASP.NET & Angular</p>
+
+    <p id='p_version'>Pre-alpha version 0.000000000002</p>
     <p id='p_copyright'>&copy; Copyright 2018 SoLegendary</p>
+
+    <textarea id="textarea_message" maxLength=140 placeholder="Say Something!" spellcheck="false" #msgbox></textarea>
+    <button id='button_sendmessage' (click)="submitMessage(msgbox.value)">Send</button>
+    <textarea id="textarea_username" maxLength=20 placeholder="Username" (keyup)="updateUsername(usernamebox.value)" spellcheck="false" #usernamebox></textarea>
+
+
+    <input />
+
+    <button (click)="toggleDebug()">Toggle Debug Mode</button><br />
+
+    <div *ngIf="showDebug">
+        <button (click)="deleteMessages()">Delete Messages</button><br />
+        <button (click)="updateMessages()">Update Messages</button><br />
+        {{this.subscribeText}}
+    </div>
 
 </div>
 
-<textarea id="textarea_message" maxLength=140 placeholder="Say Something!"spellcheck="false" #msgbox></textarea>
-<button id='button_sendmessage' (click)="submitMessage(msgbox.value)">Send</button>
-<textarea id="textarea_username" maxLength=20 placeholder="Username" (keyup)="updateUsername(usernamebox.value)" spellcheck="false" #usernamebox></textarea>
-
-<button (click)="deleteMessages()">Delete Messages</button>
 
 
 <!-- <userlist></userlist> -->

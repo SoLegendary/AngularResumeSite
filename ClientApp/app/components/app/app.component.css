@@ -1,5 +1,5 @@
 
-[id = div_background]
+[id = div_appbackground]
 {
     position: absolute;
     width: 100vw; /* 100% of viewport width - prevents shifting when scrollbar appears */
