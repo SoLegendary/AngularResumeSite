@@ -19,23 +19,14 @@
     list-style-type: none;
     position: absolute;
     left: 295px;
-    top: 80px;
+    top: 100px;
     text-align: center;
 }
-[id = a_downloadresume]
+
+
+
+[id = div_abouttext]
 {
-    width: 128px;
-    position: absolute;
-    border: 1px solid grey;
-    padding: 3px;
-    border-radius: 4px;
-    left: 310px;
-    top: 205px;
-}
-
-
-
-[id = div_abouttext] {
     margin: 0;
     position: absolute;
     margin-right: -50%;
@@ -43,9 +34,48 @@
     left: 50%;
     top: 600px;
     border: 1px solid black;
-    width: 550px;
-    padding: 10px;
+    width: 560px;
+    padding: 14px;
     text-align: justify;
     border: 1px solid grey;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+
+
+
+@media (max-width: 768px) /* small screens such as tablets and mobile */
+{
+    [id = div_profile] 
+    {
+        margin: 0;
+        position: absolute;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 330px;
+    }
+    [id = img_profilepic]
+    {
+        width: 225px;
+        height: 260px;
+    }
+    [id = p_contactinfo]
+    {
+        top: 330px;
+        margin: 0;
+        position: absolute;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+
+
+
+    [id = div_abouttext] 
+    {
+        top: 700px;
+        width: 310px;
+        right: 0px;
+    }
+
 }

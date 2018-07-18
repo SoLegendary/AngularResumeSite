@@ -51,3 +51,20 @@ nav.link-active a:focus
 {
     opacity: 1;
 }
+
+
+
+@media (max-width: 768px)
+{
+    [id = h1_nameheading] 
+    {
+        font-size: 50px;
+        top: 85px;
+    }
+
+    [id = nav_routerlinks]
+    {
+        font-size: 14px;
+        top: 160px;
+    }
+}

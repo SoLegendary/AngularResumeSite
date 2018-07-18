@@ -111,7 +111,10 @@ export class ChatroomComponent
     {
         let querystring = "SELECT TOP 5 * FROM messages ORDER BY id DESC";
         //let querystring = 'SELECT * FROM messages WHERE id > (SELECT (MAX(id) - 5) FROM messages)';
-        
+
+
+        // uncomment when safe from DDoSing
+        /*
         this.httpPost(this.url, querystring, 'text',
             () =>
             {
@@ -133,6 +136,7 @@ export class ChatroomComponent
                 }
             }
         );
+        */
     }
     
 
@@ -154,6 +158,7 @@ export class ChatroomComponent
     // Build a message object and send it to the backend server
     submitMessage(messagebody: string)
     {
+        /*
         let dt = new Date();
         let currentdate: string = dt.getDate().toString() + '-' + dt.getMonth().toString() + '-' + dt.getFullYear().toString();
         let currenttime: string = dt.getHours().toString() + ':' + dt.getMinutes().toString();
@@ -177,6 +182,8 @@ export class ChatroomComponent
                            message.date     + "', '" +
                            message.time     + "')"
 
+        
         this.httpPost(this.url, querystring, 'text', ()=>{ this.updateMessages() });
+        */
     }
 }

@@ -66,7 +66,7 @@
 [id = div_unitybody]
 {
     top: 300px;
-    width: 430px;
+    width: 486px;
     height: 120px;
     padding-left: 160px;
     padding-top: 28px;
@@ -74,10 +74,10 @@
 [id = div_raspberrypibody]
 {
     top: 500px;
-    width: 500px;
+    width: 510px;
     height: 140px;
     padding-left: 150px;
-    padding-top: 38px;
+    padding-top: 30px;
 }
 [id = div_volunteeringbody]
 {
@@ -92,5 +92,77 @@
 
 @media (max-width: 767px)
 {
+    [id = div_unityheader]
+    {
+        top: 200px;
+    }
+    [id = div_raspberrypiheader] 
+    {
+        top: 425px;
+    }
+    [id = div_volunteeringheader]
+    {
+        top: 690px;
+    }
 
+
+    [ng-class = body]
+    {
+        border: 0px solid grey;
+        width: 310px;
+        padding-left: 0px;
+        padding: 0px;
+        padding-top: 0px;
+    }
+    [id = div_unitybody]
+    {
+        top: 300px;
+    }
+    [id = div_raspberrypibody]
+    {
+        top: 525px;
+    }
+    [id = div_volunteeringbody]
+    {
+        top: 790px;
+        width: 290px;
+    }
+
+
+    [ng-class = logo] 
+    {
+        left: 50%;
+    }
+    [id = img_unitylogo] 
+    {
+        top: 35px;
+        width: 90px;
+        height: 90px;
+    }
+    [id = img_raspberrypilogo]
+    {
+        top: 45px;
+        width: 99px;
+        height: 99px;
+    }
+    [id = img_yowlogo] 
+    {
+        top: 15px;
+        width: 162px;
+        height: 54px;
+    }
+
+
+    [id = p_unity] 
+    {
+        padding-top: 90px;
+    }
+    [id = p_raspberrypi]
+    {
+        padding-top: 100px;
+    }
+    [id = p_volunteering]
+    {
+        padding-top: 55px;
+    }
 }

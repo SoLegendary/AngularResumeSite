@@ -1,11 +1,4 @@
 ﻿
-[id = div_employmentbackground]
-{
-    border: 0px solid black;
-}
-
-
-
 [ng-class = header]
 {
     width: 500px;
@@ -94,4 +87,73 @@
 [id = div_betterstillsbody]
 {
     top: 920px;
+}
+
+
+
+@media (max-width: 768px)
+{
+    [ng-class = header]
+    {
+        left: 60%;
+    }
+    [id = div_davidjonesheader]
+    {
+        top: 340px;
+    }
+    [id = div_trendwestheader]
+    {
+        top: 670px;
+    }
+    [id = div_betterstillsheader]
+    {
+        top: 980px;
+    }
+
+    [ng-class = heading]
+    {
+        left: 10px;
+        font-size: 18px;
+    }
+
+
+
+    [ng-class = logo]
+    {
+        left: 90px;
+    }
+    [id = img_davidjoneslogo]
+    {
+        width: 93px;
+        height: 100px;
+    }
+    [id = img_shoeclipart] 
+    {
+        width: 117px;
+        height: 73px;
+    }
+    [id = img_cameraclipart]
+    {
+        width: 107px;
+        height: 80px;
+    }
+
+
+
+    [ng-class = body]
+    {
+        width: 320px;
+    }
+    [id = div_davidjonesbody] 
+    {
+        top: 410px;
+    }
+    [id = div_trendwestbody]
+    {
+        top: 720px;
+    }
+    [id = div_betterstillsbody] 
+    {
+        top: 1030px;
+    }
 }

@@ -46,10 +46,60 @@
 [id = div_computationbody]
 {
     top: 580px;
-    width: 500px;
+    width: 460px;
 }
 [id = div_languagesbody]
 {
-    top: 805px;
+    top: 815px;
     width: 460px;
+}
+
+
+@media (max-width: 768px)
+{
+
+    [ng-class = logo]
+    {
+        width: 85px;
+        height: 85px;
+    }
+
+
+
+    [ng-class = header]
+    {
+
+    }
+    [id = div_developmentheader]
+    {
+        top: 250px;
+    }
+    [id = div_computationheader]
+    {
+        top: 470px;
+    }
+    [id = div_languagesheader]
+    {
+        top: 690px;
+    }
+
+
+
+    [id = div_developmentbody]
+    {
+        top: 360px;
+        width: 320px;
+    }
+
+    [id = div_computationbody]
+    {
+        top: 580px;
+        width: 320px;
+    }
+
+    [id = div_languagesbody]
+    {
+        top: 820px;
+        width: 320px;
+    }
 }
