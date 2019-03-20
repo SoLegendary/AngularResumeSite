@@ -12,7 +12,7 @@
 {
     top: 210px;
 }
-[id = div_raspberrypiheader]
+[id = div_linkedinheader]
 {
     top: 400px;
 }
@@ -36,10 +36,10 @@
     height: 100px;
     left: 17%;
 }
-[id = img_raspberrypilogo]
+[id = img_linkedinlogo]
 {
-    width: 110px;
-    height: 110px;
+    width: 99px;
+    height: 99px;
     left: 15%;
 }
 [id = img_yowlogo]
@@ -71,7 +71,7 @@
     padding-left: 160px;
     padding-top: 28px;
 }
-[id = div_raspberrypibody]
+[id = div_linkedinbody]
 {
     top: 500px;
     width: 510px;
@@ -96,7 +96,7 @@
     {
         top: 200px;
     }
-    [id = div_raspberrypiheader] 
+    [id = div_linkedinheader] 
     {
         top: 425px;
     }
@@ -118,9 +118,10 @@
     {
         top: 300px;
     }
-    [id = div_raspberrypibody]
+    [id = div_linkedinbody]
     {
-        top: 525px;
+        top: 545px;
+        text-align: center;
     }
     [id = div_volunteeringbody]
     {
@@ -139,11 +140,11 @@
         width: 90px;
         height: 90px;
     }
-    [id = img_raspberrypilogo]
+    [id = img_linkedinlogo]
     {
         top: 45px;
-        width: 99px;
-        height: 99px;
+        width: 90px;
+        height: 90px;
     }
     [id = img_yowlogo] 
     {
@@ -157,7 +158,7 @@
     {
         padding-top: 90px;
     }
-    [id = p_raspberrypi]
+    [id = p_linkedin]
     {
         padding-top: 100px;
     }

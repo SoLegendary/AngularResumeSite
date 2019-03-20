@@ -5,22 +5,16 @@
     height: 300px;
     margin: 0;
     position: absolute;
-    left: 54%;
+    left: calc(50% + 100px);
     margin-right: -50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
-[id = div_davidjonesheader]
-{
-    top: 340px;
+[id = div_infosysheader] {
+    top: 370px;
 }
-[id = div_trendwestheader]
-{
-    top: 630px;
-}
-[id = div_betterstillsheader]
-{
-    top: 890px;
+[id = div_davidjonesheader] {
+    top: 710px;
 }
 [ng-class = header] ul
 {
@@ -43,23 +37,16 @@
     position: absolute;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    left: 0px;
+    left: 20px;
     top: 55px;
 }
-[id = img_davidjoneslogo]
-{
-    width: 140px;
-    height: 150px;
-}
-[id = img_shoeclipart]
-{
-    width: 175px;
+[id = img_infosyslogo] {
+    width: 180px;
     height: 110px;
 }
-[id = img_cameraclipart]
-{
-    width: 160px;
-    height: 120px;
+[id = img_davidjoneslogo] {
+    width: 140px;
+    height: 150px;
 }
 
 
@@ -76,38 +63,26 @@
     padding-top: 8px;
     border-radius: 8px;
 }
-[id = div_davidjonesbody]
-{
-    top: 390px;
+[id = div_infosysbody] {
+    top: 420px;
 }
-[id = div_trendwestbody]
-{
-    top: 650px;
-}
-[id = div_betterstillsbody]
-{
-    top: 920px;
+[id = div_davidjonesbody] {
+    top: 750px;
 }
 
 
 
 @media (max-width: 768px)
 {
-    [ng-class = header]
+    [ng-class = header] 
     {
-        left: 60%;
+        left: calc(50% + 50px);
     }
-    [id = div_davidjonesheader]
-    {
+    [id = div_infosysheader] {
         top: 340px;
     }
-    [id = div_trendwestheader]
-    {
-        top: 670px;
-    }
-    [id = div_betterstillsheader]
-    {
-        top: 980px;
+    [id = div_davidjonesheader] {
+        top: 700px;
     }
 
     [ng-class = heading]
@@ -122,20 +97,13 @@
     {
         left: 90px;
     }
-    [id = img_davidjoneslogo]
-    {
-        width: 93px;
-        height: 100px;
-    }
-    [id = img_shoeclipart] 
-    {
+    [id = img_infosyslogo] {
         width: 117px;
         height: 73px;
     }
-    [id = img_cameraclipart]
-    {
-        width: 107px;
-        height: 80px;
+    [id = img_davidjoneslogo] {
+        width: 93px;
+        height: 100px;
     }
 
 
@@ -144,16 +112,10 @@
     {
         width: 320px;
     }
-    [id = div_davidjonesbody] 
-    {
-        top: 410px;
+    [id = div_infosysbody] {
+        top: 415px;
     }
-    [id = div_trendwestbody]
-    {
-        top: 720px;
-    }
-    [id = div_betterstillsbody] 
-    {
-        top: 1030px;
+    [id = div_davidjonesbody] {
+        top: 755px;
     }
 }

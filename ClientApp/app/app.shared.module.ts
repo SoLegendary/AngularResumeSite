@@ -22,7 +22,7 @@ const routes =
     { path: 'education', component: EducationComponent, data: { page: 3 } },
     { path: 'employment', component: EmploymentComponent, data: { page: 4 } },
     { path: 'other', component: OtherComponent, data: { page: 5 } },
-    { path: 'chatroom', component: ChatroomComponent},
+    { path: 'chatroom', component: ChatroomComponent, data: { page: 6 } },
     { path: '**', redirectTo: 'about' }
 ]
 

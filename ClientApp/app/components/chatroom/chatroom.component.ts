@@ -135,8 +135,8 @@ export class ChatroomComponent
                     this.lastid = this.messages[this.messages.length - 1].id;
                 }
             }
-        );
-        */
+        );*/
+        
     }
     
 
@@ -154,11 +154,10 @@ export class ChatroomComponent
     }
 
 
-
+    /*
     // Build a message object and send it to the backend server
     submitMessage(messagebody: string)
     {
-        /*
         let dt = new Date();
         let currentdate: string = dt.getDate().toString() + '-' + dt.getMonth().toString() + '-' + dt.getFullYear().toString();
         let currenttime: string = dt.getHours().toString() + ':' + dt.getMinutes().toString();
@@ -184,6 +183,5 @@ export class ChatroomComponent
 
         
         this.httpPost(this.url, querystring, 'text', ()=>{ this.updateMessages() });
-        */
-    }
+    }*/
 }
